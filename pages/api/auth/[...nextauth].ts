@@ -1,6 +1,7 @@
 import NextAuth from "next-auth/next"
 import Credentials from "next-auth/providers/credentials"
 import bcrypt from "bcrypt"
+import prismadb from "@/lib/prismadb"
 
 export default NextAuth({
     providers: [
@@ -40,11 +41,9 @@ export default NextAuth({
         signIn: "/auth",
     },
     debug: process.env.NODE_ENV === "development",
-    session: {
-        strategy: "jwt",
-    },
+    session: { strategy: "jwt" },
     jwt: {
-        secret: process.env.JWT_SECRET,
+        secret: process.env.NEXTAUTH_JWT_SECRET,
     },
-    secret: process.env.JWT_SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
 })
