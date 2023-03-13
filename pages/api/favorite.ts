@@ -40,12 +40,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
             if (!existingMovie) throw new Error("Invalid movie ID")
 
+            const updatedFavoriteIds = without(user.favoriteIds, movieId)
+
             const updatedUser = await prismadb.user.update({
                 where: { id: user.id },
                 data: {
-                    favoriteIds: {
-                        set: without(user.favoriteIds, movieId),
-                    },
+                    favoriteIds: updatedFavoriteIds,
                 },
             })
 
