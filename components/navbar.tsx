@@ -1,8 +1,8 @@
-import NavbarItem from "./navbarItem"
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs"
 import MobileMenu from "./MobileMenu"
 import React from "react"
 import AccountMenu from "./AccountMenu"
+import NavbarItem from "./NavbarItem"
 
 const TOP_OFFSET = 66
 
@@ -21,7 +21,7 @@ const Navbar = () => {
 
     React.useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > TOP_OFFSET) {
+            if (window.scrollY >= TOP_OFFSET) {
                 setShowBackground(true)
             } else {
                 setShowBackground(false)
@@ -37,7 +37,10 @@ const Navbar = () => {
 
     return (
         <nav className="w-full fixed z-40">
-            <div className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${showBackground ? "bg-zing-900/90" : ""}`}>
+            <div
+                className={`px-4 md:px-16 py-6 flex flex-row items-center transition duration-500 ${
+                    showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+                }`}>
                 <img src="/images/logo.png" alt="Logo" className="h-4 lg:h-7" />
                 <div className="flex-row ml-8 gap-7 hidden lg:flex">
                     <NavbarItem label="Home" />
