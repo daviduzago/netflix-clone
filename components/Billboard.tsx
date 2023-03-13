@@ -10,7 +10,7 @@ const Billboard = () => {
 
     const handleOpenModal = React.useCallback(() => {
         openModal(data?.id)
-    }, [openModal])
+    }, [openModal, data?.id])
 
     return (
         <div className="relative h-[56.25vw]">

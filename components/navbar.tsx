@@ -13,11 +13,11 @@ const Navbar = () => {
 
     const toggleAccountMenu = React.useCallback(() => {
         setShowAccountMenu((prev) => !prev)
-    }, [showAccountMenu])
+    }, [setShowAccountMenu])
 
     const toggleMobileMenu = React.useCallback(() => {
         setShowMobileMenu((prev) => !prev)
-    }, [showMobileMenu])
+    }, [setShowMobileMenu])
 
     React.useEffect(() => {
         const handleScroll = () => {
