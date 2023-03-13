@@ -1,8 +1,8 @@
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs"
-import MobileMenu from "./MobileMenu"
 import React from "react"
 import AccountMenu from "./AccountMenu"
 import NavbarItem from "./NavbarItem"
+import MobileMenu from "./MobileMenu"
 
 const TOP_OFFSET = 66
 
