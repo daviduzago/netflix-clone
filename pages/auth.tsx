@@ -5,8 +5,10 @@ import { signIn } from "next-auth/react"
 
 import { FcGoogle } from "react-icons/fc"
 import { FaGithub } from "react-icons/fa"
+import { useRouter } from "next/router"
 
 const Auth = () => {
+    const router = useRouter()
     const [email, setEmail] = React.useState("")
     const [name, setName] = React.useState("")
     const [password, setPassword] = React.useState("")
@@ -25,6 +27,7 @@ const Auth = () => {
                 redirect: false,
                 callbackUrl: "/profiles",
             })
+            router.push("/profiles")
         } catch (error) {
             console.log(error)
         }
